@@ -1,6 +1,7 @@
 import { toHaveAccessibleDescription } from '@testing-library/jest-dom/dist/matchers';
 import React from 'react';
 import './Rate.css';
+import Calc from '../Calc/Calc';
 
 class Rate extends React.Component {
   constructor(props) {
@@ -26,12 +27,10 @@ fetch("https://api.apilayer.com/exchangerates_data/latest", requestOptions)
     return data.json();
   })
   .then(data => {
-    console.log(data);
     this.setState({date : data.date});
     let result = {};
     for (let i = 0; i < this.currency.length; i++) {
       result[this.currency[i]] = data.rates[this.currency[i]];
-      console.log(result)
       this.setState({currencyRate : result});
     }
   });
@@ -51,6 +50,7 @@ fetch("https://api.apilayer.com/exchangerates_data/latest", requestOptions)
         )
         )}
       </div> 
+      <Calc rate={this.state.currencyRate} />
       </div>
   );
 }
