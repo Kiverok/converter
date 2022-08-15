@@ -8,9 +8,8 @@ class Nav extends React.Component {
   <div className="container">
     <nav>
       <ul>
-      {/* <li><a href="#">Головна</a></li> */}
-        {/* <li><a href="#">Пункти обміну</a></li> */}
-        {/* <li><a href="#">Контакти</a></li> */}
+      <li><a href="/">Головна</a></li> 
+         <li><a href="/About">Про нас</a></li>
       </ul>
     </nav>
   </div>

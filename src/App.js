@@ -1,9 +1,12 @@
 import React from 'react';
 import './App.css';
 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import Rate from './Rate/Rate';
+import About from './About copy/About';
 
 
 
@@ -17,9 +20,12 @@ class App extends React.Component {
     <Header />
   <div className="container">
     <main>
-      <Rate />
+      <Routes>
+        <Route path="/" element={<Rate />} />
+        <Route path="/About" element={<About />} />
+      </Routes>
     </main>
-  </div>
+  </div> 
   <div className="container" id="cookie_info">
     <div className="site-content">
       <div className="well">
